@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助</title>
+    <style>
+        :root{
+            --primary:#4CAF50;
+            --secondary:#2E7D32;
+            --bg:#F5F5F5;
+            --text:#212121;
+        }
+        body{
+            margin:0;
+            font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+            font-size:16px;
+            background-color:var(--bg);
+            color:var(--text);
+        }
+        .navbar{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            height:56px;
+            background-color:var(--primary);
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 16px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+            z-index:10;
+        }
+        .navbar a{
+            color:#fff;
+            text-decoration:none;
+            margin:0 8px;
+            font-size:0.95rem;
+        }
+        .navbar .logo{
+            font-weight:600;
+            font-size:1.1rem;
+        }
+        .container{
+            padding:80px 16px 24px;
+            max-width:960px;
+            margin:auto;
+        }
+        .card{
+            background:#fff;
+            border-radius:8px;
+            padding:24px;
+            margin-bottom:24px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.08);
+        }
+        h1,h2{
+            margin-top:0;
+            color:var(--primary);
+        }
+        .faq-item{
+            margin-bottom:16px;
+        }
+        .faq-item h3{
+            margin:0;
+            font-size:1rem;
+            color:var(--secondary);
+        }
+        .faq-item p{
+            margin:4px 0 0;
+            line-height:1.5;
+        }
+        .btn{
+            display:inline-block;
+            padding:10px 20px;
+            background-color:var(--primary);
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            text-decoration:none;
+            cursor:pointer;
+            font-size:0.95rem;
+            transition:background 0.2s;
+        }
+        .btn:hover{
+            background-color:var(--secondary);
+        }
+        @media (max-width:600px){
+            .navbar{
+                flex-wrap:wrap;
+                height:auto;
+                padding:8px;
+            }
+            .navbar a{
+                margin:4px;
+            }
+        }
+    </style>
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="帮助">
+    <meta property="og:description" content="二维码生成器帮助页面，提供使用指南和常见问题解答">
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"WebPage",
+        "name":"帮助",
+        "description":"二维码生成器帮助页面，提供使用指南和常见问题解答"
+    }
+    </script>
+<meta name="description" content="提供使用指南和常见问题解答"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="帮助"><meta property="og:description" content="提供使用指南和常见问题解答"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="帮助"><meta name="twitter:description" content="提供使用指南和常见问题解答"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"帮助","description":"提供使用指南和常见问题解答","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<body>
+    <div class="navbar">
+        <div class="logo">二维码生成器</div>
+        <div>
+            <a href="index.html">首页</a>
+            <a href="generate.html">生成二维码</a>
+            <a href="history.html">历史记录</a>
+            <a href="settings.html">设置</a>
+            <a href="help.html">帮助</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>帮助中心</h1>
+            <p>✅️AutoA2A是智能体互连 Agent to Agent平台，实现智能体间的无缝发现、协商、协作与数据安全交换，让您的智能体从信息孤岛走向高效协同，重塑数字化生产力。赋能多智能体生态发展自动化与AI协作,开启AI即服务新时代。</p>
+        </div>
+
+        <div class="card">
+            <h2>使用指南</h2>
+            <ol>
+                <li>点击顶部导航栏的 <strong>生成二维码</strong>，进入生成页面。</li>
+                <li>在输入框中填写需要转化为二维码的链接或文字。</li>
+                <li>可在 <strong>设置</strong> 页面自定义颜色和尺寸，或在生成页直接选择。</li>
+                <li>点击 <strong>生成</strong>，二维码会实时预览。</li>
+                <li>生成成功后，可点击 <strong>下载</strong> 保存本地，或在 <strong>历史记录</strong> 中查看已生成的二维码。</li>
+                <li>在历史记录中点击任意记录，可进入详情页查看二维码大图及分享选项。</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <h3>Q1: 为什么生成的二维码无法扫描？</h3>
+                <p>A: 请检查输入内容是否完整，确保没有空格或非法字符；同时确认选择的尺寸不低于 150px。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q2: 如何更改默认颜色和尺寸？</h3>
+                <p>A: 前往 <a href="settings.html" class="btn">设置</a> 页面，选择您喜欢的颜色和尺寸，保存后将作为默认值。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q3: 历史记录会保存多久？</h3>
+                <p>A: 本地浏览器的 localStorage 会一直保存，除非手动清除或使用隐私模式。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q4: 能否一次生成多个二维码？</h3>
+                <p>A: 当前版本仅支持单个二维码生成，批量生成计划在后续版本实现。</p>
+            </div>
+        </div>
+
+        <div class="card" style="text-align:center;">
+            <a href="index.html" class="btn">返回首页</a>
+        </div>
+    </div>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
