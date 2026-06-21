@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+  <script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#FF5733","size":200,"timestamp":1625097600000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分享</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      background-color: #F5F5F5;
+      color: #333;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .navbar .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .navbar .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+    .navbar .nav-links a:hover,
+    .navbar .nav-links a.active {
+      background-color: rgba(255,255,255,0.2);
+      color: white;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .main-content {
+      margin-top: 56px;
+      padding: 24px 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .page-title {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2E7D32;
+    }
+    .page-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #2E7D32;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .qr-preview {
+      text-align: center;
+      padding: 20px;
+    }
+    .qr-preview .qr-placeholder {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 16px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #ccc;
+      overflow: hidden;
+    }
+    .qr-preview .qr-placeholder canvas {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .qr-preview .qr-placeholder .placeholder-icon {
+      font-size: 48px;
+      color: #bbb;
+    }
+    .qr-info {
+      font-size: 14px;
+      color: #666;
+      word-break: break-all;
+      line-height: 1.6;
+    }
+    .qr-info .label {
+      font-weight: 500;
+      color: #333;
+    }
+    .share-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .share-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      gap: 10px;
+    }
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .share-btn:active {
+      transform: translateY(0);
+    }
+    .share-btn .icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+    }
+    .share-btn.wechat { background-color: #07C160; }
+    .share-btn.weibo { background-color: #E6162D; }
+    .share-btn.qq { background-color: #12B7F5; }
+    .share-btn.twitter { background-color: #1DA1F2; }
+    .share-btn.facebook { background-color: #4267B2; }
+    .share-btn.linkedin { background-color: #0077B5; }
+    .share-btn.email { background-color: #FF6F00; }
+    .share-btn.copy { background-color: #757575; }
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .action-btn {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Roboto', sans-serif;
+    }
+    .action-btn.primary {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .action-btn.primary:hover {
+      background-color: #2E7D32;
+    }
+    .action-btn.secondary {
+      background-color: #E8F5E9;
+      color: #2E7D32;
+    }
+    .action-btn.secondary:hover {
+      background-color: #C8E6C9;
+    }
+    .action-btn.outline {
+      background: transparent;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+    }
+    .action-btn.outline:hover {
+      background-color: #E8F5E9;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #333;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 2000;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+    .no-data {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+    .no-data .icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .history-section {
+      margin-top: 8px;
+    }
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .history-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: #F5F5F5;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: #333;
+    }
+    .history-item:hover {
+      background: #E8F5E9;
+    }
+    .history-item .color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .history-item .item-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .history-item .item-text {
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .history-item .item-date {
+      font-size: 12px;
+      color: #999;
+      margin-top: 2px;
+    }
+    .history-item .arrow {
+      color: #ccc;
+      font-size: 18px;
+      margin-left: 8px;
+    }
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        display: none;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        background-color: #4CAF50;
+        flex-direction: column;
+        padding: 8px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+      .navbar .nav-links.open {
+        display: flex;
+      }
+      .navbar .nav-links a {
+        width: 100%;
+        padding: 14px 24px;
+        border-radius: 0;
+        font-size: 16px;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .share-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .main-content {
+        padding: 16px 12px;
+      }
+      .page-title {
+        font-size: 24px;
+      }
+    }
+    @media (max-width: 400px) {
+      .share-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .share-btn {
+        padding: 16px 8px;
+        font-size: 12px;
+      }
+    }
+  </style>
+<meta name="description" content="提供社交媒体分享选项"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="分享"><meta property="og:description" content="提供社交媒体分享选项"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="分享"><meta name="twitter:description" content="提供社交媒体分享选项"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"分享","description":"提供社交媒体分享选项","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<body>
+  <nav class="navbar">
+    <div class="logo">QR Code Generator</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="generate.html">生成</a>
+      <a href="history.html">历史</a>
+      <a href="settings.html">设置</a>
+      <a href="help.html">帮助</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="main-content" id="mainContent">
+    <!-- Dynamic content rendered by JS -->
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function showToast(msg) {
+      var t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(function() { t.classList.remove('show'); }, 2500);
+    }
+
+    function getParam(name) {
+      return new URLSearchParams(location.search).get(name);
+    }
+
+    function formatDate(ts) {
+      if (!ts) return '';
+      var d = new Date(ts);
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0') + ' ' + String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+    }
+
+    // Simple QR code generator using canvas
+    function generateQRCanvas(text, color, size, canvas) {
+      var ctx = canvas.getContext('2d');
+      var modules = 25;
+      var cellSize = Math.floor(size / (modules + 8));
+      var totalSize = cellSize * (modules + 8);
+      canvas.width = totalSize;
+      canvas.height = totalSize;
+      
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, totalSize, totalSize);
+      ctx.fillStyle = color || '#000000';
+      
+      // Generate a deterministic pattern based on content
+      var hash = 0;
+      for (var i = 0; i < text.length; i++) {
+        hash = ((hash << 5) - hash + text.charCodeAt(i)) | 0;
+      }
+      
+      var pattern = [];
+      for (var r = 0; r < modules; r++) {
+        pattern[r] = [];
+        for (var c = 0; c < modules; c++) {
+          pattern[r][c] = (hash ^ (r * 31 + c * 17) ^ (r * c * 7)) % 3 !== 0;
+        }
+      }
+      
+      // Finder patterns
+      function drawFinder(startR, startC) {
+        for (var r = 0; r < 7; r++) {
+          for (var c = 0; c < 7; c++) {
+            var on = (r === 0 || r === 6 || c === 0 || c === 6 ||
+                     (r >= 2 && r <= 4 && c >= 2 && c <= 4));
+            pattern[startR + r][startC + c] = on;
+          }
+        }
+      }
+      
+      drawFinder(0, 0);
+      drawFinder(0, modules - 7);
+      drawFinder(modules - 7, 0);
+      
+      // Timing patterns
+      for (var i = 8; i < modules - 8; i++) {
+        pattern[6][i] = i % 2 === 0;
+        pattern[i][6] = i % 2 === 0;
+      }
+      
+      var offset = cellSize * 4;
+      for (var r = 0; r < modules; r++) {
+        for (var c = 0; c < modules; c++) {
+          if (pattern[r][c]) {
+            ctx.fillRect(offset + c * cellSize, offset + r * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+    }
+
+    function buildShareUrl(content) {
+      return location.origin + location.pathname.replace(/[^\/]*$/, '') + 'result.html?content=' + encodeURIComponent(content);
+    }
+
+    function renderPage() {
+      var main = document.getElementById('mainContent');
+      var id = getParam('id');
+      var contentParam = getParam('content');
+      var record = null;
+      var shareContent = '';
+      var shareColor = '#000000';
+      var shareSize = 200;
+
+      if (id) {
+        record = window.getById(id);
+      }
+
+      if (record) {
+        shareContent = record.content;
+        shareColor = record.color || '#000000';
+        shareSize = record.size || 200;
+      } else if (contentParam) {
+        shareContent = contentParam;
+        shareColor = getParam('color') || '#000000';
+        shareSize = parseInt(getParam('size')) || 200;
+      }
+
+      if (!shareContent) {
+        // Show recent history for sharing
+        main.innerHTML = 
+          '<h1 class="page-title">分享</h1>' +
+          '<p class="page-subtitle">选择一个二维码记录进行分享</p>' +
+          '<div class="card">' +
+            '<div class="card-title">📋 最近生成记录</div>' +
+            '<div class="no-data" id="noData" style="display:none;">' +
+              '<div class="icon">📭</div>' +
+              '<p>暂无生成记录，先生成二维码后再来分享吧</p>' +
+              '<div style="margin-top:16px;"><a href="generate.html" class="action-btn primary" style="text-decoration:none;display:inline-block;">去生成</a></div>' +
+            '</div>' +
+            '<div class="history-list" id="historyList"></div>' +
+          '</div>';
+        
+        var list = document.getElementById('historyList');
+        var noData = document.getElementById('noData');
+        var data = window.APP_DATA;
+        
+        if (!data || data.length === 0) {
+          noData.style.display = 'block';
+          return;
+        }
+        
+        var recent = data.slice(-10).reverse();
+        recent.forEach(function(item) {
+          var div = document.createElement('a');
+          div.className = 'history-item';
+          div.href = 'share.html?id=' + item.id;
+          div.innerHTML = 
+            '<span class="color-dot" style="background:' + (item.color || '#000000') + '"></span>' +
+            '<div class="item-content">' +
+              '<div class="item-text">' + item.content + '</div>' +
+              '<div class="item-date">' + formatDate(item.timestamp) + '</div>' +
+            '</div>' +
+            '<span class="arrow">›</span>';
+          list.appendChild(div);
+        });
+        return;
+      }
+
+      var encodedContent = encodeURIComponent(shareContent);
+      var shareText = '查看二维码: ' + shareContent;
+      var shareUrl = buildShareUrl(shareContent);
+
+      main.innerHTML = 
+        '<h1 class="page-title">分享二维码</h1>' +
+        '<p class="page-subtitle">选择平台分享您的二维码</p>' +
+        
+        '<div class="card qr-preview">' +
+          '<div class="card-title" style="justify-content:center;">📱 二维码预览</div>' +
+          '<div class="qr-placeholder">' +
+            '<canvas id="qrCanvas"></canvas>' +
+          '</div>' +
+          '<div class="qr-info">' +
+            '<p><span class="label">内容：</span>' + shareContent + '</p>' +
+            '<p style="margin-top:4px;"><span class="label">颜色：</span><span style="display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-left:4px;background:' + shareColor + '"></span> ' + shareColor + '</p>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="card-title">🌐 分享到社交媒体</div>' +
+          '<div class="share-grid">' +
+            '<button class="share-btn wechat" onclick="shareToWechat()">' +
+              '<span class="icon">💬</span><span>微信</span>' +
+            '</button>' +
+            '<button class="share-btn weibo" onclick="shareToWeibo()">' +
+              '<span class="icon">📢</span><span>微博</span>' +
+            '</button>' +
+            '<button class="share-btn qq" onclick="shareToQQ()">' +
+              '<span class="icon">🐧</span><span>QQ</span>' +
+            '</button>' +
+            '<button class="share-btn twitter" onclick="shareToTwitter()">' +
+              '<span class="icon">🐦</span><span>Twitter</span>' +
+            '</button>' +
+            '<button class="share-btn facebook" onclick="shareToFacebook()">' +
+              '<span class="icon">📘</span><span>Facebook</span>' +
+            '</button>' +
+            '<button class="share-btn linkedin" onclick="shareToLinkedIn()">' +
+              '<span class="icon">💼</span><span>LinkedIn</span>' +
+            '</button>' +
+            '<button class="share-btn email" onclick="shareToEmail()">' +
+              '<span class="icon">✉️</span><span>邮件</span>' +
+            '</button>' +
+            '<button class="share-btn copy" onclick="copyLink()">' +
+              '<span class="icon">🔗</span><span>复制链接</span>' +
+            '</button>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="card-title">⚡ 快捷操作</div>' +
+          '<div class="action-buttons">' +
+            '<a href="result.html?id=' + (record ? record.id : '') + '" class="action-btn secondary" style="text-decoration:none;display:inline-flex;align-items:center;">查看结果</a>' +
+            '<a href="generate.html" class="action-btn outline" style="text-decoration:none;display:inline-flex;align-items:center;">生成新码</a>' +
+            '<a href="history.html" class="action-btn primary" style="text-decoration:none;display:inline-flex;align-items:center;">历史记录</a>' +
+          '</div>' +
+        '</div>';
+
+      // Generate QR
+      setTimeout(function() {
+        var canvas = document.getElementById('qrCanvas');
+        if (canvas) {
+          generateQRCanvas(shareContent, shareColor, 180, canvas);
+        }
+      }, 50);
+    }
+
+    function shareToWechat() {
+      showToast('请截图后分享到微信');
+    }
+
+    function shareToWeibo() {
+      var url = 'https://service.weibo.com/share/share.php?url=' + encodeURIComponent(buildShareUrl(getShareContent())) + '&title=' + encodeURIComponent('查看二维码: ' + getShareContent());
+      window.open(url, '_blank', 'width=600,height=500');
+    }
+
+    function shareToQQ() {
+      var url = 'https://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(buildShareUrl(getShareContent())) + '&title=' + encodeURIComponent('二维码分享') + '&summary=' + encodeURIComponent(getShareContent());
+      window.open(url, '_blank', 'width=600,height=500');
+    }
+
+    function shareToTwitter() {
+      var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('查看二维码: ' + getShareContent()) + '&url=' + encodeURIComponent(buildShareUrl(getShareContent()));
+      window.open(url, '_blank', 'width=600,height=500');
+    }
+
+    function shareToFacebook() {
+      var url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(buildShareUrl(getShareContent()));
+      window.open(url, '_blank', 'width=600,height=500');
+    }
+
+    function shareToLinkedIn() {
+      var url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(buildShareUrl(getShareContent()));
+      window.open(url, '_blank', 'width=600,height=500');
+    }
+
+    function shareToEmail() {
+      var subject = encodeURIComponent('二维码分享');
+      var body = encodeURIComponent('我想与您分享一个二维码：\n\n' + getShareContent() + '\n\n链接：' + buildShareUrl(getShareContent()));
+      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+    }
+
+    function copyLink() {
+      var link = buildShareUrl(getShareContent());
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(function() {
+          showToast('链接已复制到剪贴板');
+        }).catch(function() {
+          fallbackCopy(link);
+        });
+      } else {
+        fallbackCopy(link);
+      }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('链接已复制到剪贴板');
+      } catch(e) {
+        showToast('复制失败，请手动复制');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function getShareContent() {
+      var id = getParam('id');
+      var record = id ? window.getById(id) : null;
+      if (record) return record.content;
+      return getParam('content') || '';
+    }
+
+    // Close menu on link click
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.nav-links a')) {
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+
+    renderPage();
+  </script>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
