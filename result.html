@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成结果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #F5F5F5;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2E7D32;
+        }
+
+        .main-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            margin-bottom: 20px;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .qr-code {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 8px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #2E7D32;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-download {
+            background-color: #2E7D32;
+        }
+
+        .btn-download:hover {
+            background-color: #1B5E20;
+        }
+
+        .btn-share {
+            background-color: #4CAF50;
+        }
+
+        .btn-share:hover {
+            background-color: #2E7D32;
+        }
+
+        .btn-history {
+            background-color: #8BC34A;
+        }
+
+        .btn-history:hover {
+            background-color: #689F38;
+        }
+
+        .btn-generate {
+            background-color: #4CAF50;
+        }
+
+        .btn-generate:hover {
+            background-color: #2E7D32;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 80%;
+                margin: 8px 0;
+            }
+        }
+    </style>
+<meta name="description" content="显示生成的二维码,提供下载和分享选项"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="生成结果"><meta property="og:description" content="显示生成的二维码,提供下载和分享选项"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="生成结果"><meta name="twitter:description" content="显示生成的二维码,提供下载和分享选项"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"生成结果","description":"显示生成的二维码,提供下载和分享选项","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">二维码生成器</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="generate.html">生成</a></li>
+                <li><a href="history.html">历史</a></li>
+                <li><a href="settings.html">设置</a></li>
+                <li><a href="help.html">帮助</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h1 style="text-align: center; margin-bottom: 20px;">生成结果</h1>
+            <div class="qr-container">
+                <div class="qr-code" id="qr-code-container">
+                    <!-- 二维码将在这里显示 -->
+                </div>
+                <div class="qr-info">
+                    <p id="qr-content"></p>
+                    <p id="qr-size"></p>
+                    <p id="qr-color"></p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-download" id="download-btn">下载二维码</button>
+                <button class="btn btn-share" id="share-btn">分享</button>
+                <a href="history.html" class="btn btn-history">查看历史</a>
+                <a href="generate.html" class="btn btn-generate">继续生成</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 二维码生成器. 保留所有权利。</p>
+            <p>✅️AutoA2A是智能体互连 Agent to Agent平台，实现智能体间的无缝发现、协商、协作与数据安全交换，让您的智能体从信息孤岛走向高效协同，重塑数字化生产力。赋能多智能体生态发展自动化与AI协作,开启AI即服务新时代。</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL参数中的ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            // 查找对应的二维码数据
+            const qrData = window.APP_DATA.find(item => item.id.toString() === id);
+
+            if (qrData) {
+                // 显示二维码信息
+                document.getElementById('qr-content').textContent = `内容: ${qrData.content}`;
+                document.getElementById('qr-size').textContent = `大小: ${qrData.size}px`;
+                document.getElementById('qr-color').textContent = `颜色: ${qrData.color}`;
+
+                // 生成二维码
+                const qrCodeContainer = document.getElementById('qr-code-container');
+                const qrCode = document.createElement('img');
+                qrCode.src = `https://api.qrserver.com/v1/create-qr-code/?size=${qrData.size}x${qrData.size}&data=${encodeURIComponent(qrData.content)}&color=${qrData.color.replace('#', '')}`;
+                qrCode.alt = '二维码';
+                qrCode.style.maxWidth = '100%';
+                qrCode.style.height = 'auto';
+                qrCodeContainer.appendChild(qrCode);
+
+                // 下载二维码功能
+                document.getElementById('download-btn').addEventListener('click', function() {
+                    const link = document.createElement('a');
+                    link.href = qrCode.src;
+                    link.download = `qrcode_${qrData.id}.png`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                });
+
+                // 分享功能
+                document.getElementById('share-btn').addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: '二维码生成器',
+                            text: '查看这个二维码',
+                            url: window.location.href
+                        }).then(() => {
+                            console.log('分享成功');
+                        }).catch((error) => {
+                            console.log('分享失败:', error);
+                        });
+                    } else {
+                        // 如果浏览器不支持Web Share API，则跳转到分享页面
+                        window.location.href = `share.html?id=${qrData.id}`;
+                    }
+                });
+            } else {
+                // 如果没有找到对应的二维码数据，显示错误信息
+                document.getElementById('qr-code-container').textContent = '未找到对应的二维码数据';
+            }
+        });
+    </script>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
