@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置</title>
+    <style>
+        body{
+            font-family:'Roboto',Arial,sans-serif;
+            background:#F5F5F5;
+            margin:0;
+            font-size:16px;
+            color:#333;
+        }
+        .top-nav{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            background:#4CAF50;
+            display:flex;
+            justify-content:space-around;
+            padding:10px 0;
+            z-index:1000;
+        }
+        .top-nav a{
+            color:#fff;
+            text-decoration:none;
+            padding:8px 16px;
+            background:#2E7D32;
+            border-radius:8px;
+        }
+        .top-nav a:hover{
+            background:#4CAF50;
+        }
+        .container{
+            max-width:800px;
+            margin:80px auto 20px;
+            padding:0 16px;
+        }
+        .header{
+            background:#4CAF50;
+            color:#fff;
+            text-align:center;
+            padding:20px;
+            border-radius:8px;
+            margin-bottom:20px;
+        }
+        .content{
+            background:#fff;
+            padding:20px;
+            border-radius:8px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom:20px;
+        }
+        .form-group{
+            margin-bottom:15px;
+        }
+        .form-group label{
+            display:block;
+            margin-bottom:5px;
+        }
+        .form-group input{
+            width:100%;
+            padding:8px;
+            border:1px solid #ddd;
+            border-radius:4px;
+        }
+        .btn{
+            background:#4CAF50;
+            color:#fff;
+            border:none;
+            padding:10px 20px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+        .btn:hover{
+            background:#2E7D32;
+        }
+        .card{
+            background:#fff;
+            border-radius:8px;
+            padding:16px;
+            margin:16px 0;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        }
+        @media(max-width:600px){
+            .top-nav{
+                flex-direction:column;
+                align-items:center;
+            }
+            .top-nav a{
+                margin:4px 0;
+                width:90%;
+                text-align:center;
+            }
+        }
+    </style>
+    <script>
+        // APP_DATA 已由系统注入，直接使用
+        // 提供全局获取函数（系统已注入，但这里确保可用）
+        window.getById = window.getById || function(id){
+            return (Array.isArray(window.APP_DATA) ? window.APP_DATA : []).find(item=>String(item.id)===String(id))||null;
+        };
+        document.addEventListener('DOMContentLoaded',function(){
+            // 渲染当前设置
+            const settings = (window.APP_DATA && window.APP_DATA.settings) || {defaultColor:'#000000',defaultSize:200};
+            document.getElementById('defaultColor').value = settings.defaultColor;
+            document.getElementById('defaultSize').value = settings.defaultSize;
+            document.getElementById('currentSettings').textContent = `颜色: ${settings.defaultColor}，大小: ${settings.defaultSize}px`;
+            // 保存表单
+            document.getElementById('settingsForm').addEventListener('submit',function(e){
+                e.preventDefault();
+                const newColor = document.getElementById('defaultColor').value;
+                const newSize = parseInt(document.getElementById('defaultSize').value,10);
+                // 更新全局数据（实际项目应持久化）
+                if(window.APP_DATA && typeof window.APP_DATA === 'object'){
+                    window.APP_DATA.settings = {defaultColor:newColor,defaultSize:newSize};
+                }
+                document.getElementById('currentSettings').textContent = `颜色: ${newColor}，大小: ${newSize}px`;
+                alert('设置已保存');
+            });
+        });
+    </script>
+<meta name="description" content="允许用户自定义二维码样式(颜色,大小),保存设置"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="设置"><meta property="og:description" content="允许用户自定义二维码样式(颜色,大小),保存设置"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="设置"><meta name="twitter:description" content="允许用户自定义二维码样式(颜色,大小),保存设置"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"设置","description":"允许用户自定义二维码样式(颜色,大小),保存设置","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html">首页</a>
+        <a href="generate.html">生成</a>
+        <a href="history.html">历史</a>
+        <a href="settings.html">设置</a>
+        <a href="help.html">帮助</a>
+    </nav>
+    <div class="container">
+        <div class="header"><h1>设置</h1></div>
+        <div class="content">
+            <h2>自定义二维码样式</h2>
+            <form id="settingsForm">
+                <div class="form-group">
+                    <label for="defaultColor">默认颜色：</label>
+                    <input type="color" id="defaultColor" name="defaultColor">
+                </div>
+                <div class="form-group">
+                    <label for="defaultSize">默认大小（px）：</label>
+                    <input type="number" id="defaultSize" name="defaultSize" min="100" max="500">
+                </div>
+                <button type="submit" class="btn">保存设置</button>
+            </form>
+        </div>
+        <div class="card">
+            <h3>当前设置</h3>
+            <p id="currentSettings"></p>
+        </div>
+    </div>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
