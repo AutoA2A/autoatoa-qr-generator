@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑二维码</title>
+    <style>
+        :root{
+            --primary:#2563eb;
+            --secondary:#10b981;
+            --font-family:"Inter",sans-serif;
+            --card-radius:8px;
+            --card-shadow:0 2px 6px rgba(0,0,0,0.1);
+            --btn-radius:6px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:var(--font-family);
+            line-height:1.5;
+            background:#f5f5f5;
+            color:#333;
+        }
+        a{
+            color:inherit;
+            text-decoration:none;
+        }
+        header{
+            background:#fff;
+            box-shadow:var(--card-shadow);
+        }
+        .nav{
+            display:flex;
+            flex-wrap:wrap;
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+        .nav li{
+            margin:0;
+        }
+        .nav a{
+            display:block;
+            padding:1rem 1.5rem;
+            transition:background .2s;
+        }
+        .nav a:hover{
+            background:rgba(0,0,0,0.05);
+        }
+        .container{
+            max-width:1200px;
+            margin:1.5rem auto;
+            padding:0 1rem;
+        }
+        .card{
+            background:#fff;
+            border-radius:var(--card-radius);
+            box-shadow:var(--card-shadow);
+            padding:16px;
+        }
+        .btn{
+            display:inline-block;
+            padding:0.5rem 1rem;
+            background:var(--primary);
+            color:#fff;
+            border:none;
+            border-radius:var(--btn-radius);
+            cursor:pointer;
+            transition:background .2s;
+        }
+        .btn:hover{
+            background:#1e40af; /* deeper primary */
+        }
+        @media (max-width:768px){
+            .nav{
+                flex-direction:column;
+            }
+            .nav a{
+                padding:0.75rem 1rem;
+            }
+        }
+    </style>
+<meta name="description" content="根据 URL 参数 id 从 localStorage 加载对应记录，填充至生成表单，允许修改后重新生成并更新记录"><meta name="keywords" content="二维码生成, QR码, 在线工具, 批量生成, 历史记录, 设置, 帮助, 下载"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="编辑二维码"><meta property="og:description" content="根据 URL 参数 id 从 localStorage 加载对应记录，填充至生成表单，允许修改后重新生成并更新记录"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="编辑二维码"><meta name="twitter:description" content="根据 URL 参数 id 从 localStorage 加载对应记录，填充至生成表单，允许修改后重新生成并更新记录"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"编辑二维码","description":"根据 URL 参数 id 从 localStorage 加载对应记录，填充至生成表单，允许修改后重新生成并更新记录","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script><style data-a2a="basecss">*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img,canvas,svg,video,table{max-width:100%;height:auto}pre,code{white-space:pre-wrap;word-break:break-word}[data-a2a="header"]{width:100%}@media(max-width:640px){body{font-size:15px}}</style></head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="generate.html">在线生成二维码</a></li>
+                <li><a href="batch.html">批量生成二维码</a></li>
+                <li><a href="history.html">我的记录</a></li>
+                <li><a href="settings.html">设置</a></li>
+                <li><a href="help.html">帮助与 FAQ</a></li>
+                <li><a href="edit.html">编辑二维码</a></li>
+                <li><a href="api.html">API 演示</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="card">
+            
+<section class="card">
+    <h2 style="margin-bottom:0.75rem;font-size:1.5rem;">编辑二维码</h2>
+    <form id="editForm">
+        <div style="margin-bottom:1rem;">
+            <label for="text" style="display:block;margin-bottom:0.25rem;">内容</label>
+            <textarea id="text" name="text" rows="3" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px;"></textarea>
+        </div>
+        <div style="margin-bottom:1rem;">
+            <label for="size" style="display:block;margin-bottom:0.25rem;">尺寸 (px)</label>
+            <input type="number" id="size" name="size" min="100" max="1000" value="200" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px;">
+        </div>
+        <div style="margin-bottom:1rem;">
+            <label for="fg" style="display:block;margin-bottom:0.25rem;">前景色</label>
+            <input type="color" id="fg" name="fg" value="#000000" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px;">
+        </div>
+        <div style="margin-bottom:1rem;">
+            <label for="bg" style="display:block;margin-bottom:0.25rem;">背景色</label>
+            <input type="color" id="bg" name="bg" value="#ffffff" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px;">
+        </div>
+        <button type="submit" class="btn">保存并重新生成</button>
+    </form>
+</section>
+
+<script>
+    // 读取 URL 中的 id 参数
+    const params = new URLSearchParams(location.search);
+    const recordId = params.get('id');
+
+    if (!recordId) {
+        alert('未指定要编辑的记录 ID！');
+        // 可选择跳转回历史记录页
+        location.href = 'history.html';
+    } else {
+        // 从 localStorage 中读取对应记录
+        const stored = localStorage.getItem('qr_records');
+        const records = stored ? JSON.parse(stored) : [];
+
+        const record = records.find(r => r.id === recordId);
+        if (!record) {
+            alert('未找到对应的记录！');
+            location.href = 'history.html';
+        } else {
+            // 填充表单
+            document.getElementById('text').value = record.text || '';
+            document.getElementById('size').value = record.size || 200;
+            document.getElementById('fg').value = record.fg || '#000000';
+            document.getElementById('bg').value = record.bg || '#ffffff';
+        }
+    }
+
+    // 表单提交后更新记录并返回历史记录页
+    document.getElementById('editForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const updated = {
+            id: recordId,
+            text: document.getElementById('text').value,
+            size: parseInt(document.getElementById('size').value, 10),
+            fg: document.getElementById('fg').value,
+            bg: document.getElementById('bg').value,
+            timestamp: Date.now()
+        };
+        const index = records.findIndex(r => r.id === recordId);
+        if (index > -1) {
+            records[index] = updated;
+            localStorage.setItem('qr_records', JSON.stringify(records));
+            alert('记录已更新！');
+            location.href = 'history.html';
+        }
+    });
+</script>
+
+        </section>
+    </main>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
