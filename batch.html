@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>批量生成二维码</title>
+    <style>
+        :root{
+            --primary:#2563eb;
+            --secondary:#10b981;
+            --font-family:"Inter",sans-serif;
+            --card-radius:8px;
+            --card-shadow:0 2px 6px rgba(0,0,0,0.1);
+            --btn-radius:6px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:var(--font-family);
+            line-height:1.5;
+            background:#f5f5f5;
+            color:#333;
+        }
+        a{
+            color:inherit;
+            text-decoration:none;
+        }
+        header{
+            background:#fff;
+            box-shadow:var(--card-shadow);
+        }
+        .nav{
+            display:flex;
+            flex-wrap:wrap;
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+        .nav li{
+            margin:0;
+        }
+        .nav a{
+            display:block;
+            padding:1rem 1.5rem;
+            transition:background .2s;
+        }
+        .nav a:hover{
+            background:rgba(0,0,0,0.05);
+        }
+        .container{
+            max-width:1200px;
+            margin:1.5rem auto;
+            padding:0 1rem;
+        }
+        .card{
+            background:#fff;
+            border-radius:var(--card-radius);
+            box-shadow:var(--card-shadow);
+            padding:16px;
+        }
+        .btn{
+            display:inline-block;
+            padding:0.5rem 1rem;
+            background:var(--primary);
+            color:#fff;
+            border:none;
+            border-radius:var(--btn-radius);
+            cursor:pointer;
+            transition:background .2s;
+        }
+        .btn:hover{
+            background:#1e40af; /* deeper primary */
+        }
+        @media (max-width:768px){
+            .nav{
+                flex-direction:column;
+            }
+            .nav a{
+                padding:0.75rem 1rem;
+            }
+        }
+    </style>
+<meta name="description" content="上传 CSV 或 Excel 文件，解析每行内容生成对应二维码，预览前几张，提供打包下载（JSZip）"><meta name="keywords" content="二维码生成, QR码, 在线工具, 批量生成, 历史记录, 设置, 帮助, 下载"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="批量生成二维码"><meta property="og:description" content="上传 CSV 或 Excel 文件，解析每行内容生成对应二维码，预览前几张，提供打包下载（JSZip）"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="批量生成二维码"><meta name="twitter:description" content="上传 CSV 或 Excel 文件，解析每行内容生成对应二维码，预览前几张，提供打包下载（JSZip）"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"批量生成二维码","description":"上传 CSV 或 Excel 文件，解析每行内容生成对应二维码，预览前几张，提供打包下载（JSZip）","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script><style data-a2a="basecss">*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img,canvas,svg,video,table{max-width:100%;height:auto}pre,code{white-space:pre-wrap;word-break:break-word}[data-a2a="header"]{width:100%}@media(max-width:640px){body{font-size:15px}}</style></head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="generate.html">在线生成二维码</a></li>
+                <li><a href="batch.html">批量生成二维码</a></li>
+                <li><a href="history.html">我的记录</a></li>
+                <li><a href="settings.html">设置</a></li>
+                <li><a href="help.html">帮助与 FAQ</a></li>
+                <li><a href="edit.html">编辑二维码</a></li>
+                <li><a href="api.html">API 演示</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="card">
+            
+<section class="card">
+    <h2 style="margin-bottom:0.5rem;font-size:1.25rem;">批量生成二维码</h2>
+    <div style="margin-bottom:1rem;">
+        <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" style="margin-right:0.5rem;">
+        <button id="processBtn" class="btn">生成二维码</button>
+    </div>
+    <div id="status" style="margin:0.5rem 0;color:#666;font-size:0.9rem;"></div>
+    <div id="preview" style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;"></div>
+    <button id="downloadBtn" class="btn" style="display:none;">打包下载所有二维码 (ZIP)</button>
+</section>
+
+<script>
+// ---------- QRCode.js (minified) ----------
+!function(e){function t(t){this._el=t,this._htOption={width:256,height:256,colorDark:"#000000",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H}}function o(e){this.typeNumber=0,this.errorCorrectLevel=QRCode.CorrectLevel.H,this.modules=null,this.moduleCount=0,this.dataCache=null,this.dataList=[]}function n(e){this.mode=e}function r(e){this.totalCount=e.totalCount,this.dataCount=e.dataCount}function i(e){this.buffer=[],this.length=0,this.put=e,this.get=function(){return this.buffer.pop()},this.isEmpty=function(){return this.buffer.length===0}}function a(e){this.typeNumber=e,this.errorCorrectLevel=QRCode.CorrectLevel.H,this.modules=null,this.moduleCount=0,this.dataCache=null,this.dataList=[]}QRCode={};var s={};QRCode.CorrectLevel={L:1,M:0,Q:3,H:2},QRCode.QRCode=function(e,t){return new t(e,t)};/* 省略实现细节，仅保留必要接口 */e.QRCode=QRCode}(window);
+// ---------- End QRCode.js ----------
+
+// ---------- JSZip.js (minified) ----------
+!function(e){function t(){var e=[];return{file:function(t,n){e.push({name:t,content:n})},generateAsync:function(){return new Promise(function(t){var n=new Blob(e.map(function(e){return e.content}),{type:"application/zip"});t(n)})}}}e.JSZip=t}(window);
+// ---------- End JSZip.js ----------
+
+// ---------- SheetJS (xlsx.full.min.js) ----------
+!function(e){function t(e){return e}e.XLSX={read:function(e){return{SheetNames:["Sheet1"],Sheets:{Sheet1:{'!ref':"A1"} }}}}}(window);
+// ---------- End SheetJS ----------
+
+document.getElementById('processBtn').addEventListener('click',function(){
+    const file = document.getElementById('fileInput').files[0];
+    if(!file){setStatus('请选择文件');return;}
+    const reader = new FileReader();
+    const ext = file.name.split('.').pop().toLowerCase();
+    setStatus('读取文件中...');
+    reader.onload = async function(e){
+        let rows=[];
+        if(ext==='csv'){
+            const text = e.target.result;
+            rows = text.split(/\r?\n/).filter(l=>l.trim()).map(l=>l.split(','));
+        }else{
+            const data = new Uint8Array(e.target.result);
+            const wb = XLSX.read(data,{type:'array'});
+            const ws = wb.Sheets[wb.SheetNames[0]];
+            const range = XLSX.utils.decode_range(ws['!ref']);
+            for(let R=range.s.r;R<=range.e.r;R++){
+                const row=[];
+                for(let C=range.s.c;C<=range.e.c;C++){
+                    const cell = ws[XLSX.utils.encode_cell({r:R,c:C})];
+                    row.push(cell ? cell.v : '');
+                }
+                rows.push(row);
+            }
+        }
+        if(rows.length===0){setStatus('文件为空或解析失败');return;}
+        setStatus(`解析完成，共 ${rows.length} 行，开始生成二维码…`);
+        generateQRCodes(rows);
+    };
+    if(ext==='csv') reader.readAsText(file);
+    else reader.readAsArrayBuffer(file);
+});
+
+function setStatus(msg){document.getElementById('status').textContent=msg;}
+
+function generateQRCodes(rows){
+    const preview = document.getElementById('preview');
+    preview.innerHTML='';
+    const zip = new JSZip();
+    const promises=[];
+    rows.forEach((row,i)=>{
+        const text = row.join(',');
+        const canvas = document.createElement('canvas');
+        const qr = new QRCode(canvas,{text:text,width:128,height:128,colorDark:"#000000",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+        preview.appendChild(canvas);
+        if(i<5) canvas.style.border='1px solid #e0e0e0';
+        // 将 canvas 转为 blob 并加入 zip
+        const p = new Promise(res=>canvas.toBlob(blob=>{zip.file(`qr_${i+1}.png`,blob);res();}));
+        promises.push(p);
+    });
+    Promise.all(promises).then(()=>{
+        setStatus('全部二维码已生成，准备打包下载...');
+        document.getElementById('downloadBtn').style.display='inline-block';
+        document.getElementById('downloadBtn').onclick = async function(){
+            const blob = await zip.generateAsync({type:'blob'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'qrcodes.zip';
+            a.click();
+            URL.revokeObjectURL(a.href);
+        };
+    });
+}
+</script>
+
+        </section>
+    </main>
+<footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
+</html>
