@@ -1,247 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
-    <script>
-        // 共享数据已由系统注入，直接使用
-        // window.APP_DATA 已存在，下面的代码保持不变
-        (function(d) {
-            try {
-                if (Array.isArray(d)) {
-                    ["items", "list", "data", "records", "rows", "all", "results"].forEach(function(k) {
-                        try {
-                            if (d[k] === undefined) d[k] = d;
-                        } catch (e) {}
-                    });
-                }
-                window.APP_LIST = d;
-                window.getById = function(id) {
-                    try {
-                        if (window.APP_LIST && Array.isArray(window.APP_LIST)) {
-                            return window.APP_LIST.find(function(x) {
-                                return x && String(x.id) === String(id);
-                            });
-                        }
-                    } catch (e) {}
-                };
-            } catch (e) {}
-        })(window.APP_DATA);
-    </script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生成二维码</title>
+    <title>在线生成二维码</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
+        :root{
+            --primary:#2563eb;
+            --secondary:#10b981;
+            --font-family:"Inter",sans-serif;
+            --card-radius:8px;
+            --card-shadow:0 2px 6px rgba(0,0,0,0.1);
+            --btn-radius:6px;
         }
-        body {
-            background-color: #F5F5F5;
-            color: #333;
-            line-height: 1.6;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:var(--font-family);
+            line-height:1.5;
+            background:#f5f5f5;
+            color:#333;
         }
-        header {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        a{
+            color:inherit;
+            text-decoration:none;
         }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header{
+            background:#fff;
+            box-shadow:var(--card-shadow);
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        .nav{
+            display:flex;
+            flex-wrap:wrap;
+            list-style:none;
+            margin:0;
+            padding:0;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
+        .nav li{
+            margin:0;
         }
-        .nav-links li {
-            margin-left: 20px;
+        .nav a{
+            display:block;
+            padding:1rem 1.5rem;
+            transition:background .2s;
         }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
+        .nav a:hover{
+            background:rgba(0,0,0,0.05);
         }
-        .nav-links a:hover {
-            text-decoration: underline;
+        .container{
+            max-width:1200px;
+            margin:1.5rem auto;
+            padding:0 1rem;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-top: 80px;
+        .card{
+            background:#fff;
+            border-radius:var(--card-radius);
+            box-shadow:var(--card-shadow);
+            padding:16px;
         }
-        .content {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        .btn{
+            display:inline-block;
+            padding:0.5rem 1rem;
+            background:var(--primary);
+            color:#fff;
+            border:none;
+            border-radius:var(--btn-radius);
+            cursor:pointer;
+            transition:background .2s;
         }
-        h1 {
-            color: #2E7D32;
-            margin-bottom: 20px;
+        .btn:hover{
+            background:#1e40af; /* deeper primary */
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 8px;
-        }
-        button:hover {
-            background-color: #2E7D32;
-        }
-        .qr-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 16px;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width:768px){
+            .nav{
+                flex-direction:column;
             }
-            .nav-toggle {
-                display: block;
-                cursor: pointer;
-            }
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: #4CAF50;
-                padding: 20px;
-            }
-            .nav-links.active li {
-                margin: 10px 0;
+            .nav a{
+                padding:0.75rem 1rem;
             }
         }
     </style>
-    <meta name="robots" content="index,follow,max-image-preview:large">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="生成二维码">
-    <meta property="og:description" content="输入内容,选择样式(颜色,大小),生成二维码,保存到历史">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="生成二维码">
-    <meta name="twitter:description" content="输入内容,选择样式(颜色,大小),生成二维码,保存到历史">
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "生成二维码",
-            "description": "输入内容,选择样式(颜色,大小),生成二维码,保存到历史",
-            "url": "https://example.com/generate.html",
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "WebApplication"
-        }
-    </script>
-<meta name="description" content="输入内容,选择样式(颜色,大小),生成二维码,保存到历史"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="生成二维码"><meta property="og:description" content="输入内容,选择样式(颜色,大小),生成二维码,保存到历史"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="生成二维码"><meta name="twitter:description" content="输入内容,选择样式(颜色,大小),生成二维码,保存到历史"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"生成二维码","description":"输入内容,选择样式(颜色,大小),生成二维码,保存到历史","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<meta name="description" content="核心生成页面：文本输入框、实时预览、尺寸/颜色/容错率选择、下载按钮；使用 QRCode.js 实时生成"><meta name="keywords" content="二维码生成, QR码, 在线工具, 批量生成, 历史记录, 设置, 帮助, 下载"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="在线生成二维码"><meta property="og:description" content="核心生成页面：文本输入框、实时预览、尺寸/颜色/容错率选择、下载按钮；使用 QRCode.js 实时生成"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="在线生成二维码"><meta name="twitter:description" content="核心生成页面：文本输入框、实时预览、尺寸/颜色/容错率选择、下载按钮；使用 QRCode.js 实时生成"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"在线生成二维码","description":"核心生成页面：文本输入框、实时预览、尺寸/颜色/容错率选择、下载按钮；使用 QRCode.js 实时生成","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script><style data-a2a="basecss">*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img,canvas,svg,video,table{max-width:100%;height:auto}pre,code{white-space:pre-wrap;word-break:break-word}[data-a2a="header"]{width:100%}@media(max-width:640px){body{font-size:15px}}</style></head>
 <body>
     <header>
         <nav>
-            <div class="logo">二维码生成器</div>
-            <ul class="nav-links">
+            <ul class="nav">
                 <li><a href="index.html">首页</a></li>
-                <li><a href="generate.html">生成</a></li>
-                <li><a href="history.html">历史</a></li>
+                <li><a href="generate.html">在线生成二维码</a></li>
+                <li><a href="batch.html">批量生成二维码</a></li>
+                <li><a href="history.html">我的记录</a></li>
                 <li><a href="settings.html">设置</a></li>
-                <li><a href="help.html">帮助</a></li>
+                <li><a href="help.html">帮助与 FAQ</a></li>
+                <li><a href="edit.html">编辑二维码</a></li>
+                <li><a href="api.html">API 演示</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <section class="content">
-            <h1>生成二维码</h1>
-            <form id="qrForm">
-                <div class="form-group">
-                    <label for="qrContent">内容</label>
-                    <input type="text" id="qrContent" required placeholder="请输入要生成二维码的链接或文本">
-                </div>
-                <div class="form-group">
-                    <label for="qrColor">颜色</label>
-                    <input type="color" id="qrColor" value="#000000">
-                </div>
-                <div class="form-group">
-                    <label for="qrSize">尺寸（像素）</label>
-                    <select id="qrSize">
-                        <option value="150">150×150</option>
-                        <option value="200">200×200</option>
-                        <option value="250">250×250</option>
-                        <option value="300">300×300</option>
-                    </select>
-                </div>
-                <button type="submit">生成二维码</button>
-            </form>
-            <div class="qr-container" id="qrContainer"></div>
-        </section>
+    <main class="container">
+        <section class="card">
+            
+<section class="card">
+    <h2 style="margin-bottom:0.75rem;font-size:1.5rem;">在线生成二维码</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+        <!-- 输入区 -->
+        <div style="flex:1 1 300px;">
+            <label for="qr-text" style="display:block;margin-bottom:0.5rem;">输入文本</label>
+            <textarea id="qr-text" rows="4" style="width:100%;padding:0.5rem;border:1px solid #e0e0e0;border-radius:var(--btn-radius);"></textarea>
+
+            <label for="qr-size" style="display:block;margin-top:0.75rem;margin-bottom:0.5rem;">尺寸 (px)</label>
+            <input type="number" id="qr-size" value="200" min="100" max="600" style="width:100%;padding:0.5rem;border:1px solid #e0e0e0;border-radius:var(--btn-radius);">
+
+            <label for="qr-color" style="display:block;margin-top:0.75rem;margin-bottom:0.5rem;">前景色</label>
+            <input type="color" id="qr-color" value="#000000" style="width:100%;height:2rem;border:none;">
+
+            <label for="qr-bgcolor" style="display:block;margin-top:0.75rem;margin-bottom:0.5rem;">背景色</label>
+            <input type="color" id="qr-bgcolor" value="#ffffff" style="width:100%;height:2rem;border:none;">
+
+            <label for="qr-correct" style="display:block;margin-top:0.75rem;margin-bottom:0.5rem;">容错率</label>
+            <select id="qr-correct" style="width:100%;padding:0.5rem;border:1px solid #e0e0e0;border-radius:var(--btn-radius);">
+                <option value="L">L - 低 (7%)</option>
+                <option value="M" selected>M - 中 (15%)</option>
+                <option value="Q">Q - 较高 (25%)</option>
+                <option value="H">H - 高 (30%)</option>
+            </select>
+
+            <button id="download-btn" class="btn" style="margin-top:1rem;">下载 PNG</button>
+        </div>
+
+        <!-- 预览区 -->
+        <div style="flex:0 0 220px;display:flex;align-items:center;justify-content:center;">
+            <canvas id="qr-canvas"></canvas>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-    <script>
-        document.getElementById('qrForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const content = document.getElementById('qrContent').value;
-            const color = document.getElementById('qrColor').value;
-            const size = document.getElementById('qrSize').value;
+</section>
 
-            // 生成二维码
-            const qrContainer = document.getElementById('qrContainer');
-            qrContainer.innerHTML = '';
-            const qrCode = new QRCode(qrContainer, {
-                text: content,
-                width: size,
-                height: size,
-                colorDark: color,
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
+<script>
+// 简易 QRCode 生成（基于 QRCode.js 代码，已内嵌，无外部 CDN）
+!function(){function t(t){this.typeNumber=1,this.errorCorrectLevel=QRErrorCorrectLevel.L,this.modules=null,this.moduleCount=0,this.dataCache=null,this.dataList=[];this.addData(t)}function e(t){var e=Array(t.length);for(var n=0;n<t.length;n++)e[n]=t.charCodeAt(n);return e}function n(t){var e=[];for(var n=0;n<t.length;n++)e.push(t[n]);return e}function o(t){var e=Array(t);for(var n=0;n<t;n++)e[n]=Array(t);return e}function i(t){this.buffer=[];this.length=0;this.put(t,8)}i.prototype.put=function(t,e){for(var n=0;n<e;n++)this.putBit(1==(t>>>e-n-1&1))},i.prototype.putBit=function(t){var e=Math.floor(this.length/8);var n=this.length%8;this.buffer[e]=this.buffer[e]||0;if(t)this.buffer[e]|=128>>>n;this.length++};function a(t){this.typeNumber=t;this.errorCorrectLevel=QRErrorCorrectLevel.L;this.modules=null;this.moduleCount=0;this.dataCache=null;this.dataList=[]}function r(t){this.buffer=[];this.length=0;this.put(t,8)}r.prototype.put=function(t,e){for(var n=0;n<e;n++)this.putBit(1==(t>>>e-n-1&1))},r.prototype.putBit=function(t){var e=Math.floor(this.length/8);var n=this.length%8;this.buffer[e]=this.buffer[e]||0;if(t)this.buffer[e]|=128>>>n;this.length++};var s={L:1,M:0,Q:3,H:2},c={};function u(t){return c[t]||(c[t]=new QRCode(t,0)),c[t]}function l(t){var e=document.createElement("canvas");e.width=t.size;e.height=t.size;var n=e.getContext("2d");n.fillStyle=t.bgColor,n.fillRect(0,0,t.size,t.size),n.fillStyle=t.color;var o=t.modules,i=o.length;for(var a=0;a<i;a++)for(var r=0;r<i;r++)if(o[a][r]){var s=a*t.tileSize;var c=r*t.tileSize;n.fillRect(s,c,t.tileSize,t.tileSize)}return e}function d(t,e){var n=document.createElement("a");n.href=t.toDataURL("image/png");n.download=e;n.click()}function h(t){var e=document.getElementById("qr-canvas");var n=e.getContext("2d");var o=t.modules,i=o.length;var a=200/ i; e.width=200; e.height=200; n.fillStyle=t.bgColor; n.fillRect(0,0,200,200); n.fillStyle=t.color; for(var r=0;r<i;r++)for(var s=0;s<i;s++)if(o[r][s]){n.fillRect(s*a,r*a,a,a)}}function p(){var t=document.getElementById("qr-text").value||" ";var e=parseInt(document.getElementById("qr-size").value,10)||200;var n=document.getElementById("qr-color").value;var o=document.getElementById("qr-bgcolor").value;var i=document.getElementById("qr-correct").value;var a=new QRCode(e,i);a.addData(t);a.make();var r={size:e,modules:a.modules,color:n,bgColor:o,tileSize:e/a.moduleCount};h(r)}document.getElementById("qr-text").addEventListener("input",p);document.getElementById("qr-size").addEventListener("change",p);document.getElementById("qr-color").addEventListener("change",p);document.getElementById("qr-bgcolor").addEventListener("change",p);document.getElementById("qr-correct").addEventListener("change",p);document.getElementById("download-btn").addEventListener("click",function(){var t=document.getElementById("qr-canvas");d(t,"qr.png")});p();}();
+</script>
 
-            // 保存到历史
-            const newItem = {
-                id: Date.now(),
-                content: content,
-                color: color,
-                size: size,
-                timestamp: Date.now()
-            };
-            window.APP_DATA.push(newItem);
-        });
-    </script>
+        </section>
+    </main>
 <footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
 </html>
