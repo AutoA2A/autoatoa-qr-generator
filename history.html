@@ -1,157 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head><script>window.APP_DATA = [{"id":1,"content":"https://www.example.com/products/12345","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":2,"content":"https://www.example.com/blog/post-2023","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":3,"content":"https://www.example.com/contact","color":"#3357FF","size":150,"timestamp":1625270400000},{"id":4,"content":"https://www.example.com/about","color":"#F3FF33","size":300,"timestamp":1625356800000},{"id":5,"content":"https://www.example.com/services","color":"#FF33F3","size":180,"timestamp":1625443200000},{"id":6,"content":"https://www.example.com/portfolio","color":"#33FFF3","size":220,"timestamp":1625529600000},{"id":7,"content":"https://www.example.com/team","color":"#F333FF","size":170,"timestamp":1625616000000},{"id":8,"content":"https://www.example.com/testimonials","color":"#33F3FF","size":230,"timestamp":1625702400000},{"id":9,"content":"https://www.example.com/faq","color":"#FF3333","size":190,"timestamp":1625788800000},{"id":10,"content":"https://www.example.com/support","color":"#33FF33","size":240,"timestamp":1625875200000},{"id":11,"content":"https://www.example.com/privacy-policy","color":"#3333FF","size":210,"timestamp":1625961600000},{"id":12,"content":"https://www.example.com/terms-of-service","color":"#FFFF33","size":260,"timestamp":1626048000000},{"id":13,"content":"https://www.example.com/events","color":"#FF33FF","size":160,"timestamp":1626134400000},{"id":14,"content":"https://www.example.com/news","color":"#33FFFF","size":270,"timestamp":1626220800000},{"id":15,"content":"https://www.example.com/downloads","color":"#FF3333","size":280,"timestamp":1626307200000},{"id":16,"content":"https://www.example.com/products/101","color":"#FF5733","size":200,"timestamp":1625097600000},{"id":17,"content":"https://www.example.com/products/102","color":"#33FF57","size":250,"timestamp":1625184000000},{"id":18,"content":"https://www.example.com/products/103","color":"#3357FF","size":300,"timestamp":1625270400000},{"id":19,"content":"https://www.example.com/products/104","color":"#F3FF33","size":150,"timestamp":1625356800000},{"id":20,"content":"https://www.example.com/products/105","color":"#FF33F3","size":200,"timestamp":1625443200000},{"id":21,"content":"https://www.example.com/products/106","color":"#33FFF3","size":250,"timestamp":1625529600000},{"id":22,"content":"https://www.example.com/products/107","color":"#F333FF","size":300,"timestamp":1625616000000},{"id":23,"content":"https://www.example.com/products/108","color":"#33FF33","size":150,"timestamp":1625702400000},{"id":24,"content":"https://www.example.com/products/109","color":"#FF3333","size":200,"timestamp":1625788800000},{"id":25,"content":"https://www.example.com/products/110","color":"#3333FF","size":250,"timestamp":1625875200000},{"id":26,"content":"https://www.example.com/products/111","color":"#FFFF33","size":300,"timestamp":1625961600000},{"id":27,"content":"https://www.example.com/products/112","color":"#33FFFF","size":150,"timestamp":1626048000000},{"id":28,"content":"https://www.example.com/products/113","color":"#FF33FF","size":200,"timestamp":1626134400000},{"id":29,"content":"https://www.example.com/products/114","color":"#33FF33","size":250,"timestamp":1626220800000},{"id":30,"content":"https://www.example.com/products/115","color":"#FF3333","size":300,"timestamp":1626307200000},{"id":31,"content":"https://www.example.com/products/116","color":"#3333FF","size":150,"timestamp":1626393600000},{"id":32,"content":"https://www.example.com/products/117","color":"#FFFF33","size":200,"timestamp":1626480000000},{"id":33,"content":"https://www.example.com/products/118","color":"#33FFFF","size":250,"timestamp":1626566400000},{"id":34,"content":"https://www.example.com/products/119","color":"#FF33FF","size":300,"timestamp":1626652800000},{"id":35,"content":"https://www.example.com/products/120","color":"#33FF33","size":150,"timestamp":1626739200000}];(function(d){try{if(Array.isArray(d)){["items","list","data","records","rows","all","results","content"].forEach(function(k){try{if(d[k]===undefined)d[k]=d;}catch(e){}});}window.APP_LIST=Array.isArray(d)?d:[];window.getById=function(id){return window.APP_LIST.find(function(x){return x&&String(x.id)===String(id);})||null;};}catch(e){}})(window.APP_DATA);</script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生成历史</title>
+    <title>我的记录</title>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #F5F5F5;
-            margin: 0;
-            padding: 0;
-            color: #333;
+        :root{
+            --primary:#2563eb;
+            --secondary:#10b981;
+            --font-family:"Inter",sans-serif;
+            --card-radius:8px;
+            --card-shadow:0 2px 6px rgba(0,0,0,0.1);
+            --btn-radius:6px;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:var(--font-family);
+            line-height:1.5;
+            background:#f5f5f5;
+            color:#333;
         }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        a{
+            color:inherit;
+            text-decoration:none;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
+        header{
+            background:#fff;
+            box-shadow:var(--card-shadow);
         }
-        .nav {
-            display: flex;
-            gap: 15px;
+        .nav{
+            display:flex;
+            flex-wrap:wrap;
+            list-style:none;
+            margin:0;
+            padding:0;
         }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+        .nav li{
+            margin:0;
         }
-        .nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+        .nav a{
+            display:block;
+            padding:1rem 1.5rem;
+            transition:background .2s;
         }
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .nav a:hover{
+            background:rgba(0,0,0,0.05);
         }
-        .history-item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .container{
+            max-width:1200px;
+            margin:1.5rem auto;
+            padding:0 1rem;
         }
-        .history-item:last-child {
-            border-bottom: none;
+        .card{
+            background:#fff;
+            border-radius:var(--card-radius);
+            box-shadow:var(--card-shadow);
+            padding:16px;
         }
-        .history-item a {
-            color: #2E7D32;
-            text-decoration: none;
-            font-weight: bold;
+        .btn{
+            display:inline-block;
+            padding:0.5rem 1rem;
+            background:var(--primary);
+            color:#fff;
+            border:none;
+            border-radius:var(--btn-radius);
+            cursor:pointer;
+            transition:background .2s;
         }
-        .history-item a:hover {
-            text-decoration: underline;
+        .btn:hover{
+            background:#1e40af; /* deeper primary */
         }
-        .history-details {
-            display: flex;
-            flex-direction: column;
-        }
-        .history-date {
-            color: #666;
-            font-size: 14px;
-        }
-        .btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #2E7D32;
-        }
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
+        @media (max-width:768px){
+            .nav{
+                flex-direction:column;
             }
-            .nav {
-                flex-direction: column;
-                gap: 5px;
-                margin-top: 10px;
+            .nav a{
+                padding:0.75rem 1rem;
             }
         }
     </style>
-<meta name="description" content="展示用户生成的二维码历史,点击查看详情"><meta name="keywords" content="二维码,生成器,在线,自定义,分享,历史,设置,帮助"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="生成历史"><meta property="og:description" content="展示用户生成的二维码历史,点击查看详情"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="生成历史"><meta name="twitter:description" content="展示用户生成的二维码历史,点击查看详情"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"生成历史","description":"展示用户生成的二维码历史,点击查看详情","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script></head>
+<meta name="description" content="从 localStorage 读取历史记录，以卡片形式展示每条记录的缩略图、内容、时间；支持下载、删除、编辑（跳转 edit.html）"><meta name="keywords" content="二维码生成, QR码, 在线工具, 批量生成, 历史记录, 设置, 帮助, 下载"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="我的记录"><meta property="og:description" content="从 localStorage 读取历史记录，以卡片形式展示每条记录的缩略图、内容、时间；支持下载、删除、编辑（跳转 edit.html）"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="我的记录"><meta name="twitter:description" content="从 localStorage 读取历史记录，以卡片形式展示每条记录的缩略图、内容、时间；支持下载、删除、编辑（跳转 edit.html）"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"我的记录","description":"从 localStorage 读取历史记录，以卡片形式展示每条记录的缩略图、内容、时间；支持下载、删除、编辑（跳转 edit.html）","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script><style data-a2a="basecss">*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img,canvas,svg,video,table{max-width:100%;height:auto}pre,code{white-space:pre-wrap;word-break:break-word}[data-a2a="header"]{width:100%}@media(max-width:640px){body{font-size:15px}}</style></head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>生成历史</h1>
-            <div class="nav">
-                <a href="index.html">首页</a>
-                <a href="generate.html">生成</a>
-                <a href="history.html">历史</a>
-                <a href="settings.html">设置</a>
-                <a href="help.html">帮助</a>
-            </div>
-        </div>
-        <div class="content">
-            <div id="historyList"></div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const historyList = document.getElementById('historyList');
+    <header>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="generate.html">在线生成二维码</a></li>
+                <li><a href="batch.html">批量生成二维码</a></li>
+                <li><a href="history.html">我的记录</a></li>
+                <li><a href="settings.html">设置</a></li>
+                <li><a href="help.html">帮助与 FAQ</a></li>
+                <li><a href="edit.html">编辑二维码</a></li>
+                <li><a href="api.html">API 演示</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="card">
+            
+<section class="card">
+  <h2 style="margin-bottom:0.75rem;font-size:1.5rem;">我的记录</h2>
+  <div id="history-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px));gap:1rem;"></div>
+</section>
+<script>
+  var historyKey='qrHistory';
+  function loadHistory(){
+    var raw=localStorage.getItem(historyKey);
+    var arr=raw?JSON.parse(raw):[];
+    window.historyRecords=arr;
+    var container=document.getElementById('history-grid');
+    container.innerHTML='';
+    if(arr.length===0){
+      container.innerHTML='<section class="card" style="text-align:center;padding:2rem;"><svg width="64" height="64" fill="var(--secondary)" viewBox="0 0 24 24" aria-hidden="true" style="margin-bottom:1rem;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z"/></svg><p style="font-size:1rem;color:#666;">暂无记录，您可以前往生成页添加。</p><a href="generate.html" class="btn" style="margin-top:1rem;">去生成</a></section>';
+      return;
+    }
+    for(var i=0;i<arr.length;i++){
+      var rec=arr[i];
+      var img=rec.img||'';
+      var text=rec.text||'';
+      var time=new Date(rec.time).toLocaleString();
+      var id=rec.id;
+      var media='<article class="card" style="display:flex;flex-wrap:wrap;gap:1rem;">'+
+                '<img src="'+img+'" alt="QR code" style="flex:0 0 120px;border-radius:var(--card-radius);">'+
+                '<div style="flex:1;display:flex;flex-direction:column;">'+
+                '<h3 style="margin:0 0 0.3rem;font-size:1rem;word-break:break-all;">'+text+'</h3>'+
+                '<p style="margin:0 0 0.5rem;font-size:0.85rem;color:#666;">'+time+'</p>'+
+                '<div style="margin-top:auto;">'+
+                '<a href="#" class="btn" style="margin-right:0.5rem;" onclick="downloadRecord(\''+id+'\')">下载</a>'+
+                '<a href="#" class="btn" style="margin-right:0.5rem;" onclick="deleteRecord(\''+id+'\')">删除</a>'+
+                '<a href="edit.html?id='+id+'" class="btn">编辑</a>'+
+                '</div>'+
+                '</div>'+
+                '</article>';
+      container.insertAdjacentHTML('beforeend',media);
+    }
+  }
+  function downloadRecord(id){
+    var rec=window.historyRecords.find(function(r){return r.id===id;});
+    if(rec && rec.img){
+      var a=document.createElement('a');
+      a.href=rec.img;
+      a.download='qr_'+id+'.png';
+      a.click();
+    }
+  }
+  function deleteRecord(id){
+    var arr=window.historyRecords.filter(function(r){return r.id!==id;});
+    localStorage.setItem(historyKey,JSON.stringify(arr));
+    loadHistory();
+  }
+  window.onload=function(){loadHistory();}
+</script>
 
-            if (window.APP_DATA && Array.isArray(window.APP_DATA)) {
-                window.APP_DATA.forEach(item => {
-                    const historyItem = document.createElement('div');
-                    historyItem.className = 'history-item';
-
-                    const date = new Date(item.timestamp).toLocaleDateString();
-
-                    historyItem.innerHTML = `
-                        <div class="history-details">
-                            <a href="result.html?id=${item.id}">${item.content}</a>
-                            <div class="history-date">${date}</div>
-                        </div>
-                        <a href="result.html?id=${item.id}" class="btn">查看详情</a>
-                    `;
-
-                    historyList.appendChild(historyItem);
-                });
-            } else {
-                historyList.innerHTML = '<p>没有找到生成历史。</p>';
-            }
-        });
-    </script>
+        </section>
+    </main>
 <footer data-a2a="footer" style="margin-top:48px;padding:28px 16px;border-top:1px solid rgba(127,127,127,.16);text-align:center;font-family:system-ui,-apple-system,'PingFang SC',sans-serif;line-height:1.9;color:#8a8f99;background:transparent"><a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="display:inline-block;margin-bottom:10px"><img src="https://agent.oagi.com.cn/uploads/202606/29ea3ed5413830b3.png" alt="AutoA2A" style="height:36px;vertical-align:middle;border:0"></a><div style="font-size:13.5px;color:#6b7280;max-width:760px;margin:0 auto 6px">✅️ <b>AutoA2A</b> · 智能体互连 Agent to Agent 平台——让智能体无缝发现、协商、协作与安全交换数据，开启 AI 即服务新时代。</div><div style="font-size:13px">本网站由 <a href="https://www.autoa2a.org" target="_blank" rel="noopener" style="color:#f2603c;text-decoration:none;font-weight:600">www.autoa2a.org</a> 多个 AI 协作生成</div><div style="font-size:12px;color:#aab;margin-top:6px">Copyright © 2025 - 2026 AutoA2A. All Rights Reserved. A2A版权所有</div></footer></body>
 </html>
